@@ -1,0 +1,55 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <p> Triange</p><br>
+        Height:<input type="number" id="h">
+        base:<input type="number" id="ba">
+        <button type="submit" value="Triangle" id="tri" onClick="area1()">CALCULATE AREA OF A TRIANGLE</button>
+        <p id="ans1"> </p><br>
+        <p> Rectangle</p><br>
+        Length:<input type="number" id="len">
+        Breadth:<input type="number" id="br">
+        <button type="submit" value="Rectangle" id="rect" onClick="area2()">CALCULATE AREA OF A TRIANGLE</button>
+        <p id="ans2"> </p><br>
+        
+        <script>
+            class Shape{
+                    constructor(name,l,b)
+                    {
+                        this.name=name;
+                        this.length=l;
+                        this.breadth=b;
+                    }
+                    area(a,b,c)
+                    {
+                        return c*a*b;
+                    }
+                    area(a,b)
+                    {
+                        return a*b;
+                    }
+                    
+                }
+            function area1()
+            {
+                
+                let tside1=document.getElementById("h").value;
+                let tside2=document.getElementById("ba").value;
+                var Tri="Triangle";
+                var triangle=new Shape(Tri,tside1,tside2);
+                document.getElementById("ans1").innerHTML=triangle.area(0.5,tside1,tside2);
+            }
+            function area2()
+            {
+                
+                let rside1=document.getElementById("len").value;
+                let rside2=document.getElementById("br").value;
+                var Rect="Rectangle";
+                var rectangle=new Shape(Rect,rside1,rside2);
+                document.getElementById("ans2").innerHTML=rectangle.area(rside1,rside2);
+            }
+        </script>
+    </body>
+
+</html>
