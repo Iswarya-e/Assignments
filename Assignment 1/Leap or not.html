@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    Year: <input type="number" id="year" /><br />
+    <button type="submit" onclick="check()">Check </button>
+    <p id="result"></p>
+    <script>
+        function check() {
+            let year = document.getElementById("year").value;
+
+            if (year % 100 == 0) {
+                if (year % 400 == 0)
+                    return document.getElementById("result").innerHTML = "LEAP YEAR";
+                else
+                    return document.getElementById("result").innerHTML = "NOT A LEAP YEAR";
+            }
+            else {
+                if (year % 4 == 0)
+                    return document.getElementById("result").innerHTML = "LEAP YEAR";
+                else
+                    return document.getElementById("result").innerHTML = "NOT A LEAP YEAR";
+            }
+
+        }
+    </script>
+</body>
+</html>

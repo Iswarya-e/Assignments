@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <br />
+ 
+    <p> MENU</p>
+    <table>
+        <thead>ITEM</thead>
+        <thead> PRICE</thead>
+        <tr>
+            <td>Pizza</td>
+            <td>350   </td>
+
+        </tr>
+        <tr>
+            <td>Burger</td>
+            <td>250   </td>
+
+        </tr>
+        <tr>
+            <td>Cold Drink</td>
+            <td>50   </td>
+
+        </tr>
+        <tr>
+            <td>Tea</td>
+            <td>60   </td>
+
+        </tr>
+        <tr>
+            <td>Coffee</td>
+            <td>80   </td>
+
+        </tr>
+    </table>
+
+    Pizza:<input type="number" id="pizza" min="1" max="100"><br />
+    Burger:<input type="number" id="burger" min="1" max="100"><br />
+    Cold Drink:<input type="number" id="colddrink" min="1" max="100"><br />
+    Tea:<input type="number" id="tea" min="1" max="100"><br />
+    Coffee:<input type="number" id="coffee" min="1" max="100"><br />
+
+    <button type="submit" onclick="calculateBill()">Calculate Bill</button>
+    <p id="result" /> </p>
+    <script>
+        function calculateBill() {
+
+            let pizza = document.getElementById("pizza").value;
+            let burger = document.getElementById("burger").value;
+            let colddrink = document.getElementById("colddrink").value;
+            let tea = document.getElementById("tea").value;
+            let coffee = document.getElementById("coffee").value;
+            var sum = pizza * 350 + burger * 250 + colddrink * 50 + tea * 60 + coffee * 80;
+            document.getElementById("result").innerHTML = sum;
+
+        }
+
+
+
+    </script>
+
+</body>
+</html>

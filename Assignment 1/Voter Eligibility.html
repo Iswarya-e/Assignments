@@ -1,0 +1,30 @@
+﻿<!--
+
+    Wap in java script to check the age of the voter if voter age is less than 18 then display  the message
+ “You are not eligible” if voter age is greater then go to the voting page.
+    
+    -->
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    Age: <input type="number" id="age" /><br />
+    <button type="submit" onclick="check()">Check Eligibility</button>
+    <p id="result"></p>
+    <script>
+        function check() {
+            let age = document.getElementById("age").value;
+            if (age < 18)
+                return document.getElementById("result").innerHTML = "NOT ELIGIBLE";
+            else
+                return document.getElementById("result").innerHTML = "ELIGIBLE";
+
+        }
+    </script>
+</body>
+</html>

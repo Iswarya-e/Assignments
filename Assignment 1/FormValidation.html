@@ -1,0 +1,73 @@
+﻿<!--
+5.Wap in javascript with html to check the validation of the 
+    by user registration if it does not match then display the error.
+
+A. Age is not less than 18.
+
+B. Email id should be in correct format.
+
+C. First name & Email should be required.
+
+D. Mobile number should be 10 digits
+
+If all the values are correct then show the welcome page otherwise shows all the errors in front of the user
+
+-->
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form action="C:/Users/User/Desktop/Training/welcome.html" method="post" onsubmit="return validate()"  >
+        First Name:<input type="text" id="First_name" /><br />
+        Last Name:<input type="text" id="Last_name" /><br />
+        Email:<input type="email" id="email" /><br />
+        Mobile Number:<input type="number" id="mobile_num" /><br />
+        Age:<input type="text" id="age" /><br />
+      
+        <button type="submit" > Submit</button>
+
+        <p id="result"></p>
+
+    </form>
+    <script>
+        function validate()
+        {   
+            var fname = document.getElementById("First_name").value;
+            var email = document.getElementById("email").value;
+            var mobile_num = document.getElementById("mobile_num").value;
+            var age = document.getElementById("age").value;
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            var message = ' ';
+		if(fname==' '){
+            message += "First name required";
+		}
+		if(email==""){
+            message += "Email is null";
+		}
+        if (age > 18) {
+               message+="Age not valid";
+                }
+		if(mobile_num>9999999999 || mobile_num<1000000000)
+		{
+		    message+="Mobile number  not valid";	
+        }      
+        if (email.value.match(mailformat)) {
+           message+="Email not valid";
+        }
+               
+		if(message=="")
+			return true;
+        else
+            return document.getElementById("result").innerHTML = message;
+			return false;
+	}
+
+
+
+    </script>
+</body>
+</html>

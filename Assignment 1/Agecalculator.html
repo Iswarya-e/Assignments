@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    </head>
+
+
+<body>
+         Enter Date of Birth: <input type=date id="b_date"> 
+        <button type="submit" onclick="ageCalculator()"> Calculate age </button> <br>
+        <p id="result" ></p>
+        <script>
+            function ageCalculator() {
+                var input = document.getElementById("b_date").value;
+                var dob = new Date(input);
+                //calculate month difference from current date in time
+                var month_diff = Date.now() - dob.getTime();
+                //convert the calculated difference in date format
+                var age_dt = new Date(month_diff);
+                //extract year from date
+                var year = age_dt.getUTCFullYear();
+                //now calculate the age of the user
+                var age = Math.abs(year - 1970);
+                return document.getElementById("result").innerHTML = age;
+
+            }
+        </script>   
+</body>
+</html>
