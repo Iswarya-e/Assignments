@@ -1,0 +1,63 @@
+
+<html>
+    <head>
+        <link href="https://kendo.cdn.telerik.com/2019.2.619/styles/kendo.common.min.css" rel="stylesheet" />
+
+        <meta charset="utf-8" />
+        <link href="https://kendo.cdn.telerik.com/2022.1.119/styles/kendo.common.min.css" rel="stylesheet" />
+        <link href="https://kendo.cdn.telerik.com/2022.1.119/styles/kendo.default.min.css" rel="stylesheet" />
+        <script src="https://kendo.cdn.telerik.com/2022.1.119/js/jquery.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2022.1.119/js/kendo.all.min.js"></script>
+        <script>
+            var people = [ { firstName: "John",
+                 lastName: "Smith",
+                 email: "john.smith@telerik.com",
+                 Age:18,
+                 City:"Texas",
+                 Jan:12000,
+                 Feb:20000,
+                 March:30000,
+                 Mobile:1234567890},
+               { firstName: "Jane",
+                 lastName: "Smith",
+                 email: "jane.smith@telerik.com",
+                 Age:18,
+                 City:"Texas",
+                 Jan:12000,
+                 Feb:20000,
+                 March:30000,
+                 Mobile:1234567890 },
+               { firstName: "Josh",
+                 lastName: "Davis",
+                 email: "josh.davis@telerik.com",
+                 Age:18,
+                 City:"Texas",
+                 Jan:12000,
+                 Feb:20000,
+                 March:30000,
+                 Mobile:1234567890 },
+               { firstName: "Cindy",
+                 lastName: "Jones",
+                 email: "cindy.jones@telerik.com",
+                 Age:18,
+                 City:"Texas",
+                 Jan:42000,
+                 Feb:50000,
+                 March:30000,
+                 Mobile:1234567890 } ];
+            $(document).ready(function(){
+                $("#grid").kendoGrid({
+                    dataSource:people,
+                    sortable: true,
+                    filterable: true
+                    
+                });
+            });
+    
+        </script>
+    </head>
+    <body>
+        <div id="grid"></div> </body>
+</html>
+
+    

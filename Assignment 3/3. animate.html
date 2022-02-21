@@ -1,0 +1,18 @@
+
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script> 
+            $(document).ready(function(){
+                $("button").click(function(){
+                    $("div").animate({ left:'250px',height:'+=150px',width:'+=150px'},"slow");
+                    $("div").css("background-color", "green");
+                 });
+            });
+        </script>   
+    </head>
+    <body>
+        <button>Animate</button>
+        <div id="div" style="background:#bf2121;height:100px;width:100px;position:absolute;"></div>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+//5.Wap to make registration form using kendo ui widgets like textbox, date time picker for selecting the
+//age ,combo box for city,etc.
+<!DOCTYPE html>
+<html>
+ <link href="https://kendo.cdn.telerik.com/2019.2.619/styles/kendo.common.min.css" rel="stylesheet" />
+
+<meta charset="utf-8" />
+<title>Getting Started with Kendo UI for jQuery</title>
+<link href="https://kendo.cdn.telerik.com/2022.1.119/styles/kendo.common.min.css" rel="stylesheet" />
+<link href="https://kendo.cdn.telerik.com/2022.1.119/styles/kendo.default.min.css" rel="stylesheet" />
+<script src="https://kendo.cdn.telerik.com/2022.1.119/js/jquery.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2022.1.119/js/kendo.all.min.js"></script>
+<script>
+            $(document).ready(function() {
+                $("#city").kendoComboBox();
+                $("#date").kendoDatePicker();
+                $("#textbox").kendoTextBox();
+                $("#textbox1").kendoTextBox();
+                
+            });
+           
+</script>
+</head>
+<body>
+
+<form>
+  First name:
+  <input type="text" id="textbox" style="width:200px;"><br>
+  Last name:
+  <input type="text" id="textbox1" style="width:200px;"><br>
+  DOB:
+  <input type="date" id="date" style="width:200px;" ><br>
+  City:
+  <select id="city" placeholder="Select city..." style="width:200px;"  >
+    <option>Chennai</option>
+    <option>Trivandrum</option>
+    <option>Delhi</option>
+    <option>Kolkatta</option>
+    <option>Pune</option>
+    <option>Mumbai</option>
+  </select>
+
+</form>
+
+
+
+</body>
+</html>
