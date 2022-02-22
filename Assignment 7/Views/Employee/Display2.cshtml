@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = null;
+}
+@model IEnumerable<mvc.Models.Employee>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Display2</title>
+</head>
+<body>
+    <div>
+        <table class="table">
+            <tr>
+                <th>NAME </th>
+                <th>CITY</th>
+            </tr>
+            @foreach (var item in ViewBag.emp)
+            {
+                <tr>
+                    <td>
+                        @item.Name
+                    </td>
+
+                    <td>
+                        @item.City
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>
+</html>

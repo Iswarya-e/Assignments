@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+@model IEnumerable<mvc.Models.Product>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Display2</title>
+</head>
+<body>
+    <div>
+            
+
+            @foreach (var item in Model)
+            {
+        <ul>
+            <li> @Html.DisplayFor(modelItem => item.Name)</li>
+
+        </ul>
+            }
+
+    </div>
+</body>
+</html>
