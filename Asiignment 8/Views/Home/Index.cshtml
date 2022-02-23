@@ -1,0 +1,54 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div><table>
+             <tbody>
+                 <tr>
+                     <td> @Html.Label("First Name")</td>
+                     <td>@Html.TextBox("Name")</td>
+                 </tr>
+                 <tr>
+                     <td>@Html.Label("Last Name")</td>
+                     <td>@Html.TextBox("Name")</td>
+                 </tr>
+                 <tr>
+                     <td> @Html.Label("Password")</td>
+                     <td>@Html.Password("Password")</td>
+                 </tr>
+                 <tr>
+                     <td>@Html.Label("Gender")</td>
+                     <td>
+                         @Html.RadioButton("r1", "Male")
+                     @Html.Label("Male")
+                     @Html.RadioButton("r1", "Female")
+                     @Html.Label("Female")
+                 </td>
+             </tr>
+             <tr>
+                 <td>@Html.Label("Address")</td>
+                 <td>@Html.TextArea("Address")</td>
+             </tr>
+             <tr>
+                 <td>@Html.Label("Languages known")</td>
+                 <td>
+                     @Html.CheckBox("c") @Html.Label("C")
+                     @Html.CheckBox("c++") @Html.Label("C++")
+                     @Html.CheckBox("Java") @Html.Label("Java")
+                     @Html.CheckBox("Python") @Html.Label("Python")
+                 </td>
+             </tr>
+             </tbody>
+    </table>
+    </div>
+</body>
+</html>
