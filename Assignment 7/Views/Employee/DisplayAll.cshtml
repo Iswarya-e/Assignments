@@ -1,0 +1,52 @@
+﻿
+@{
+    Layout = null;
+}
+//@using mvc.Models
+//@model IEnumerable<mvc.Models.Employee>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DisplayAll</title>
+    <style>
+        table, th, td {
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th>NAME </th>
+                <th>AGE</th>
+                <th>CITY</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+        <tr>
+            <td>
+                @item.id
+            </td>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Age
+            </td>
+            <td>
+                @item.City
+            </td>
+        </tr>
+            }
+
+       
+
+        </table>
+    </div>
+</body>
+</html>

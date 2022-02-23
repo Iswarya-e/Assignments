@@ -1,0 +1,60 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @Html.Label("L1", "Name")
+
+        @Html.TextBox("Text", "Name")
+        @Html.RadioButton("R1", "Male")
+        @Html.Label("L1", "Male")
+        @Html.RadioButton("R1", "Female")
+        @Html.Label("L1", "Female")
+        @{
+            String grade = "A";
+            switch (grade)
+            {
+                case "A":<h1>Great</h1>
+                    break;
+                case "B":<h1>Good</h1>
+                    break;
+                case "C":<h1>Average</h1>
+                    break;
+                default: <h1>Invalid grade</h1>
+                    break;
+            }
+        }
+
+        @{ <h1>Today Date and Time:@DateTime.Now.ToString()</h1>
+
+        }
+
+
+        }
+        @{ try
+            {
+                int a = 2;
+                int b = 0;
+                int c = a / b;
+                <h1>"Result is "@c</h1>
+            }
+            catch (Exception e)
+            {
+                <h1> @e </h1>
+            }
+
+
+        }
+
+
+    </div>
+</body>
+</html>
