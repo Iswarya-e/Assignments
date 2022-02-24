@@ -1,4 +1,4 @@
-﻿<!--
+<!--
 5.Wap in javascript with html to check the validation of the 
     by user registration if it does not match then display the error.
 
@@ -21,7 +21,7 @@ If all the values are correct then show the welcome page otherwise shows all the
     <title></title>
 </head>
 <body>
-    <form action="C:/Users/User/Desktop/Training/welcome.html" method="post" onsubmit="return validate()"  >
+    <form action="C:/Users/User/Desktop/Training/welcome.html" onsubmit="return validate()" method="post"  >
         First Name:<input type="text" id="First_name" /><br />
         Last Name:<input type="text" id="Last_name" /><br />
         Email:<input type="email" id="email" /><br />
@@ -34,6 +34,7 @@ If all the values are correct then show the welcome page otherwise shows all the
 
     </form>
     <script>
+     
         function validate()
         {   
             var fname = document.getElementById("First_name").value;
@@ -42,28 +43,33 @@ If all the values are correct then show the welcome page otherwise shows all the
             var age = document.getElementById("age").value;
             var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             var message = ' ';
-		if(fname==' '){
-            message += "First name required";
-		}
-		if(email==""){
-            message += "Email is null";
-		}
-        if (age > 18) {
-               message+="Age not valid";
+		        if(fname==" "){
+                 alert("Name must be filled out");
+                return false;
+		        }
+                else if(email==""){
+                    alert("Email is null");
+                        return false;
+                
                 }
-		if(mobile_num>9999999999 || mobile_num<1000000000)
-		{
-		    message+="Mobile number  not valid";	
-        }      
-        if (email.value.match(mailformat)) {
-           message+="Email not valid";
-        }
-               
-		if(message=="")
-			return true;
-        else
-            return document.getElementById("result").innerHTML = message;
-			return false;
+                else if (age=="" || age > 18) 
+                {
+                    alert("Age not valid");
+                    return false; 
+                }
+                else if(mobile_num="" || mobile_num>9999999999 || mobile_num<1000000000)
+                {
+                    alert("Mobile number  not valid");
+                    return false;
+                }      
+                else if (email.value.match(mailformat)) 
+                {
+                    alert("Email not valid");
+                    return false;
+                }
+                else{
+                    return true;
+                }
 	}
 
 
