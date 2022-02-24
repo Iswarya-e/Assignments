@@ -1,4 +1,4 @@
-﻿<!--
+<!--
 
     Wap in java script to check the age of the voter if voter age is less than 18 then display  the message
  “You are not eligible” if voter age is greater then go to the voting page.
@@ -13,17 +13,25 @@
     <title></title>
 </head>
 <body>
-    Age: <input type="number" id="age" /><br />
-    <button type="submit" onclick="check()">Check Eligibility</button>
-    <p id="result"></p>
-    <script>
-        function check() {
-            let age = document.getElementById("age").value;
-            if (age < 18)
-                return document.getElementById("result").innerHTML = "NOT ELIGIBLE";
-            else
-                return document.getElementById("result").innerHTML = "ELIGIBLE";
 
+
+    <form action="C:/Users/User/Desktop/Training/eligible.html" onsubmit="return validate()" method="post"  >
+        Age:<input type="number" id="age" /><br />
+        <button type="submit" > Submit</button>
+    </form>
+    
+    <script>
+        function validate() {
+            
+            var age = document.getElementById("age").value;
+                if (age=="" || age < 18) 
+                {
+                    alert("You are not eligible");
+                    return false; 
+                }
+                else{
+                    return true;
+                }
         }
     </script>
 </body>
