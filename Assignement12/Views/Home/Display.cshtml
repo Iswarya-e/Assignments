@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Assignment9MVC3.Models.Employee>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Display</title>
+</head>
+<body>
+   
+    <table class="table">
+        <tr>
+            <td>
+                @ViewBag.Fname
+            </td>
+            <td>
+                @ViewBag.LName
+            </td>
+            <td>
+                @ViewBag.Age
+            </td>
+            <td>
+                @ViewBag.email
+            </td>
+            <td>
+                @ViewBag.Gender
+            </td>
+            <td>
+                @ViewBag.address
+            </td>
+            <td>
+                @ViewBag.city
+            </td>
+            <td>
+                @ViewBag.state
+            </td>
+            <td>
+                @ViewBag.mobile
+            </td>
+            <td>
+                @ViewBag.eq 
+            </td>
+            
+        </tr>
+    </table>
+</body>
+</html>
