@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Achievements";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Achievements</h2>
+
+<ul id="treeView">
+    <li>
+        Cerfications
+        <ul>
+            <li>Python </li>
+            <li>RedHat</li>
+        </ul>
+    </li>
+    <li>
+        Internship
+        <ul>
+            <li>Python </li>
+            <li>RedHat</li>
+        </ul>
+    </li>
+    <li>
+        Workshops
+        <ul>
+            <li>Ethical Hacking </li>
+            <li>Machine learning</li>
+            <li>Artificial Intelligence</li>
+        </ul>
+    </li>
+    <li>
+        Publications
+        <ul>
+            <li>Computer Vision based wellness analysis of geriatrics </li>
+            
+        </ul>
+    </li>
+</ul>
+
+<script>
+$(document).ready(function() {
+    $("#treeView").kendoTreeView();
+});
+</script>
