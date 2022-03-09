@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.1.301/styles/kendo.default-v2.min.css" />
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2022.1.301/js/kendo.all.min.js"></script>
+</head>
+<body>
+
+    <form id="form" method="post" >
+        <div>
+            <label>First Name:</label>
+            <input type="text" name="firstname" id="firstname" required data-required-msg=" Firstname is required" />
+        </div>
+        <div>
+            <label>Last Name:</label>
+
+            <input type="text" name="lastname" id="lastname" required data-required-msg="Lastname is required" />
+        </div>
+        <div>
+            <label>Gender:</label>
+            <input id="m" name="radioBtn" />
+            <input id="f" name="radioBtn" />
+        </div>
+      
+        <div>
+            <label>DOB:</label>
+            <input type="date" name="birthdate" id="dateTimePicker" required data-date-msg="Your birthdate is not recognized! :-)" />
+        </div>
+        <div>
+            <label>Email:</label>
+            <input type="email" name="email" id="email" required
+                   data-required-msg="Your email is required"
+                   data-email-msg="Your email is not recognized" />
+        </div>
+        <div>
+            <label>Country Code:</label>
+            <input type="text" name="countryCode" id="countryCode" pattern="[+0-9]{3}"
+                   required
+                   data-required-msg="Country code is required)"
+                   data-pattern-msg="Unable to recognize your country code" />
+        </div>
+        <div>
+            <label>Qualification:</label>
+            <select id="qualification">
+                <option>B.E</option>
+                <option>B.Sc</option>
+                <option>M.Sc</option>
+                <option>M.Tech</option>
+                <option></option>
+            </select>
+        </div>
+
+
+        <div id="message"> </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    <script>
+        $(document).ready(function () {
+            $("#firstname").kendoTextBox();
+            $("#lastname").kendoTextBox();
+            $("#dateTimePicker").kendoDateTimePicker();
+            $("#email").kendoTextBox();
+            $("#countryCode").kendoTextBox();
+            $("#m").kendoRadioButton({
+                label: "Male"
+            });
+            $("#f").kendoRadioButton({
+                label: "Female",
+                encoded: false
+            });
+           
+            $("#qualification").kendoDropDownList();
+                 
+        });
+       
+        var form = $("#form"),
+            messageDiv = $("#message"),
+            validator = null;
+
+        $(function () {
+            if (form) {
+                validator = form.kendoValidator().data("kendoValidator");
+                console.log(validator);
+            }
+        });
+
+        $(form).submit(validateMyForm);
+        function validateMyForm(e) {
+            e.preventDefault();
+            if (validator) {
+                var resultOfValidation = validator.validate();
+            }
+        }
+    </script>
+</body>
+</html>

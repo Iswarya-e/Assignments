@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.1.301/styles/kendo.default-v2.min.css" />
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2022.1.301/js/kendo.all.min.js"></script>
+</head>
+<body>
+    <h2>Register</h2>
+    <form id="form" method="post">
+
+        <div>
+            <label>Email:</label>
+            <input type="email" name="email" id="email" required
+                   data-required-msg="Your email is required"
+                   data-email-msg="Your email is not recognized" />
+        </div>
+
+        <div>
+            <label>Password:</label>
+            <input type="password" name="pass" id="pass" required
+                   data-required-msg="Your password is required"/>
+        </div>
+
+        <div id="message"> </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    <script>
+        $(document).ready(function () {
+            $("#email").kendoTextBox();
+            $("#pass").kendoTextBox();
+        });
+        var form = $("#form"),
+            messageDiv = $("#message"),
+            validator = null;
+
+        $(function () {
+            if (form) {
+                validator = form.kendoValidator().data("kendoValidator");
+                console.log(validator);
+            }
+        });
+        $(form).submit(validateMyForm);
+        function validateMyForm(e) {
+            e.preventDefault();
+            if (validator) {
+                var resultOfValidation = validator.validate();
+            }
+        }
+    </script>
+</body>
+</html>
