@@ -1,0 +1,31 @@
+﻿@model Gridview.Models.UserModel
+@using System.Web.Optimization
+@using Kendo.Mvc.UI
+@using Kendo.Mvc.Extensions
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="width:60%;height:100%">
+    @(Html.Kendo().Grid<Gridview.Models.UserModel>()
+.Name("BindGridUsingRead")
+.Columns(columns =>
+{
+columns.Bound(p => p.Id).Width(15).Title("Sr. No.").Filterable(false);
+columns.Bound(p => p.Name).Title("Name").Width(30).Filterable(false);
+columns.Bound(p => p.City).Title("City").Width(15).Filterable(false);
+columns.Bound(p => p.Email).Title("Email").Width(15).Filterable(false);
+})
+.Scrollable()
+.Pageable(x => x.PageSizes(new List<object> { 10, 20, 100, 200, 500, "all" }).Refresh(true))
+.Filterable(ftp => ftp.Mode(GridFilterMode.Row))
+.Resizable(resize => resize.Columns(true))
+.HtmlAttributes(new { style = "height: 100%" })
+.Selectable()
+.DataSource(dataSource => dataSource
+.Ajax()
+.Model(model => model.Id(p => p.Id))
+.ServerOperation(false)
+.Read(read => read.Action("BindGrid", "Home"))
+)
+)
+</div>
